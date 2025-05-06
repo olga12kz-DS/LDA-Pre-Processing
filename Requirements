@@ -1,0 +1,38 @@
+Please run the commands in the provided order to avoid version conflicts. 
+
+!pip install numpy==1.26.4 spacy scispacy
+!pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_sm-0.5.1.tar.gz
+!python -m spacy download en_core_web_sm
+# Restart the session
+import numpy as np
+import spacy
+import scispacy
+
+from spacy.tokenizer import Tokenizer
+import re # module for pattern matching and text manipulation
+from spacy.util import compile_prefix_regex, compile_infix_regex, compile_suffix_regex
+import pandas as pd
+from collections import Counter
+import nltk
+from nltk.tokenize import RegexpTokenizer
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+nltk.download('punkt')
+import string
+import pandas as pd
+import pprint # for printing long lists in data frames
+from nltk.corpus import stopwords
+# Set column width and other display settings
+pd.set_option('display.max_colwidth', None)        # Show full content in columns
+pd.set_option('display.max_columns', None)         # Show all columns
+pd.set_option('display.width', 0)                  # Auto-detect width to prevent line wrapping
+pd.set_option('display.max_rows', 100)            
+
+# nlp = spacy.load("en_core_sci_sm") # small clinical model to test
+nlp = spacy.load("en_core_web_sm") # standard english model to use
+
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger_eng')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+lemmatizer = WordNetLemmatizer()
