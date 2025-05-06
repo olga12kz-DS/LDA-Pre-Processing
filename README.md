@@ -7,3 +7,4 @@ In this case, advanced pre-processing was applied to 1,000 discharge notes from 
 -Supervised and unsupervised text classification. 
 -Similarity models such as TF – IDF. 
 
+Please note that due to human subject research rules, the MIMIC-III cannot be publicly provided. I invite you to review the enclosed code and slides to familiarize yourself with the project. 
